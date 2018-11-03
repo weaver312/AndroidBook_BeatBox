@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--这是单个item的布局，也被改成绑定布局了，其它类只要使用listitemsoundbinding就能管理这个布局-->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!--可以看到，使用MVVM结构，在V里要指定把自己的数据交给VM来处理-->
+    <data>
+        <variable
+            name="viewModel"
+            type="com.weaverhong.lesson.androidbook_beatbox.SoundViewModel"/>
+    </data>
+    <!--button里的@{}其实就是viewModel.getTitle的简写形式-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:text="@{viewModel.title}"
+        tools:text="Sound name"/>
+</layout>
